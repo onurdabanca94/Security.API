@@ -35,6 +35,17 @@ namespace Security.WebUI.Controllers
             return View(products);
         }
 
+        [HttpPost]
+        public IActionResult Index(string searchText)
+        {
+            var product = _context.Products.Where(x => x.ProductName == searchText).ToList();
+            //var product = _context.Products.FromSqlRaw("select * from products where ProductName=" + "'" + searchText + "'").ToList();
+            //var product = _context.Products.FromSqlInterpolated($"select * from products where ProductName={searchText}").ToList();
+            //var product = _context.Products.FromSqlRaw("select * from products where ProductName={0}", searchText).ToList();
+
+            return View(product);
+        }
+
         // GET: Products/Details/5
         public async Task<IActionResult> Details(string id)
         {

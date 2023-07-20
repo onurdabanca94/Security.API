@@ -1,0 +1,30 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewpoint" content="width=device-width"/>
+    <title>CommentAdd</title>
+</head>
+<body>
+    <form asp-antiforgery="false" method="post">
+        <input type="text" name="name"/>
+        <br />
+        <textarea name="comment"></textarea>
+        <br />
+        <input type="submit" value="Yorum Gönder" />
+    </form>
+    <h1>Yorumlar</h1>
+    @if(ViewBag.comments != null)
+    {
+        foreach (var item in ViewBag.comments as string[])
+        {
+            @*<span>@item</span>*@
+            <span>@Html.Raw(item)</span>
+            <hr />
+        }
+    }
+</body>
+</html>

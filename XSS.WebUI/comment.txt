@@ -1,0 +1,7 @@
+onur-yorum 1
+ömür-yorum 2
+hasan-<script>alert('merhaba')</script>
+<b>Yorumlar çok güzel</b>
+onurD-<script>alert(document.cookie)</script>
+onur5-yorum5
+onur10-yorum10
